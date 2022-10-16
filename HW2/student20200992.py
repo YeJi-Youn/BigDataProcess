@@ -15,7 +15,7 @@ for row in ws:
 		sum += float(ws.cell(row = row_id, column = 6).value or 0)
 
 		ws.cell(row = row_id, column = 7).value = sum
-		totals.append(sum)
+		totals.append(round(sum, 2))
 
 	row_id += 1
 
@@ -53,8 +53,6 @@ for row in ws:
 		ws.cell(row = row_id, column = 8).value = "C+"
 	elif t >= c0n:
 		ws.cell(row = row_id, column = 8).value = "C"
-	else:
-		ws.cell(row = row_id, column = 8).value = "F"
 	row_id += 1
 
 wb.save("student.xlsx")
