@@ -38,21 +38,23 @@ b0n = totals[a + b - 1]
 cn = totals[a + b + cc - 1]
 c0n = totals[a + b + c - 1]
 
+print(a, aa, b, bb, c, cc)
+
 row_id = 2
 for row in ws:
 	t = float(ws.cell(row = row_id, column = 7).value or 0)
 	if t >= an:
 		ws.cell(row = row_id, column = 8).value = "A+"
 	elif t >= a0n:
-		ws.cell(row = row_id, column = 8).value = "A"
+		ws.cell(row = row_id, column = 8).value = "A0"
 	elif t >= bn:
 		ws.cell(row = row_id, column = 8).value = "B+"
 	elif t >= b0n:
-		ws.cell(row = row_id, column = 8).value = "B"
+		ws.cell(row = row_id, column = 8).value = "B0"
 	elif t >= cn:
 		ws.cell(row = row_id, column = 8).value = "C+"
 	elif t >= c0n:
-		ws.cell(row = row_id, column = 8).value = "C"
+		ws.cell(row = row_id, column = 8).value = "C0"
 	row_id += 1
 
 wb.save("student.xlsx")
